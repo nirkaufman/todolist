@@ -4,13 +4,16 @@ import Main from "./Main";
 import {useState} from "react";
 
 function App() {
-  const [items, setItems] = useState([]);
-
+  const [items, setItems] = useState([
+    { title: 'first task', completed: false },
+    { title: 'second task', completed: false },
+    { title: 'third task', completed: false },
+  ]);
 
   return (
       <section className="todoapp">
         <Header title="Todobom"/>
-        <Main/>
+        <Main items={items}/>
         <Footer/>
       </section>
   );

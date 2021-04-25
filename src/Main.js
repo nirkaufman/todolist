@@ -11,7 +11,7 @@ function Main ({ items }) {
                          checked={item.completed}
                          type="checkbox" />
                   <label>{item.title}</label>
-                  <button className="destroy" />
+                  <button onClick={} className="destroy" />
                 </div>
                 <input className="edit" />
               </li>

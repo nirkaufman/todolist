@@ -4,16 +4,21 @@ import Main from "./Main";
 import {useState} from "react";
 
 function App() {
-  const [items, setItems] = useState([
-    { title: 'first task', completed: false },
-    { title: 'second task', completed: false },
-    { title: 'third task', completed: false },
-  ]);
+  const [items, setItems] = useState([]);
+
+  function addNewItem(itemTitle) {
+    setItems( [...items, {title: itemTitle}] );
+  }
+
+  function removeItem(item) {
+    const updateItems = items.filter( currentItem => item.title === currentItem.title)
+    setItems(updateItems);
+  }
 
   return (
       <section className="todoapp">
-        <Header title="Todobom"/>
-        <Main items={items}/>
+        <Header title="Todobom" addItem={addNewItem} />
+        <Main items={items} />
         <Footer/>
       </section>
   );
